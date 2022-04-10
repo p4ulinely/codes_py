@@ -6,8 +6,13 @@ class Tree():
         return self.tree
 
     def print_tree(self) -> None:
+        # TODO: need to work on it
         for l in self.tree:
-            print(l)
+            inicial_tab = ''.rjust(len(l['path'])-1, ' ')
+            print(l['path'])
+            for e, h in zip(l['extensions'], l['extensions_hits']):
+                print(f"{inicial_tab}| {e}: {h}")
+            print(f"{''.rjust(len(l['path'])-1, ' ')}{l['files_number']} file(s) in the path")
 
     def add_line(
             self, 
